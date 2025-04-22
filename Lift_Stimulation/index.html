@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="styles.css" rel="stylesheet">
+
+  <title>Lift Stimultion</title>
+</head>
+
+<body>
+  <div>
+    <div id="header-container">
+      <h1>Lift Simulation</h1>
+    </div>  
+    <section id="screen-one">
+      <h4>Please enter the number of floors and the number of lifts you would like to simulate:</h4>
+      <p>The number of floors and lifts must be between 1 and 12.</p>
+      <form id="liftForm" action="">
+        <div class="input-container">
+          <label for="floors">Floor:</label>
+          <input id="floors" type="number">
+        </div>
+        <div class="input-container">
+          <label for="lifts">Lifts:</label>
+          <input id="lifts" type="number">
+        </div>
+        <input id="submit" type="submit" value="Submit" class="submit-btn">
+      </form>
+    </section>
+    <section id="screen-two">
+      <div id="floor-container"></div>
+      <div id="lift-container"></div>  
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
