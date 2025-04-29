@@ -18,7 +18,6 @@ function App() {
       <Price />
       <Testimonial />
       <Footer />
-
     </div>
   )
 }
