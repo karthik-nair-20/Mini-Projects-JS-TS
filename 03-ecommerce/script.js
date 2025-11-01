@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const cartItem = document.createElement("div");
         cartItem.innerHTML = `
         ${item.name} - $${item.price.toFixed(2)}
+          <button data-id="${item.id}">delete item</button>
         `;
         cartItems.appendChild(cartItem);
         totalPriceDisplay.textContent = `${totalPrice.toFixed(2)}`;
@@ -58,8 +59,18 @@ document.addEventListener("DOMContentLoaded", () => {
       emptyCartMessage.classList.remove("hidden");
       totalPriceDisplay.textContent = `$0.00`;
     }
-
   }
+
+  cartItems.addEventListener("click", (e) => {
+    if(e.target.tagName === "BUTTON") {
+      const itemId = parseInt(e.target.getAttribute("data-id"));
+      const index = cart.findIndex((item) => item.id === itemId);
+      if (index !== -1) {
+        cart.splice(index, 1);
+        renderCart();
+      }
+    }
+  })
 
   checkOutBtn.addEventListener("click", () => {
     cart.length = 0;
